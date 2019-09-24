@@ -4,11 +4,11 @@ import './controller.css'
 function Controller(props) {
 
     return(
-        <div className='controller'>
-            <button className='start-stop-button' >
-                Start
+        <div className = 'controller'>
+            <button className = 'start-stop-button' onClick = {props.startStop} >
+                { props.hasStarted ? 'Stop' : 'Start' }
             </button>
-            <button className='reset'>
+            <button className = 'reset' onClick = { props.reset }>
                 Reset
             </button>
         </div>

@@ -13,10 +13,10 @@ class App extends React.Component {
     this.audioBeep = React.createRef()
 
     this.state = {
-      breakLength: 10,
-      sessionLength: 10,
+      breakLength: 5,
+      sessionLength: 25,
       timeLabel: 'Session',
-      timeLeftInSecond: 10 * 60,
+      timeLeftInSecond: 25 * 60,
       hasStarted: false,
       timerInterval: null
     }
@@ -58,10 +58,10 @@ class App extends React.Component {
 
   reset = () => {
     this.setState({
-      breakLength: 10,
-      sessionLength: 10,
+      breakLength: 5,
+      sessionLength: 25,
       timeLabel: 'Session',
-      timeLeftInSecond: 60,
+      timeLeftInSecond: 25 * 60,
       hasStarted: false,
       timerInterval: null
     })
@@ -124,7 +124,7 @@ class App extends React.Component {
           <h1>pomodoro clock</h1>  
         </div>
         <Settings 
-          breakLength = '5'
+          breakLength = { this.state.breakLength }
           sessionLength = { this.state.sessionLength }
           hasStarted = { true }
           decreaseBreak = { this.decreaseBreak }

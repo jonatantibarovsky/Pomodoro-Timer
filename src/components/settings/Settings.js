@@ -1,33 +1,29 @@
 import React, { Component } from 'react';
 import './settings.css';
 
-class Settings extends Component {
-
-  render() {
+function Settings(props) {
       
-    const btnClassName = this.props.isStart ? 'disable' : '';
-
     return (
-      <div className="settings">
-        <div className="settings-section">
-          <label id="break-label">Break Length</label>
+      <div className = "settings">
+        <div className = "settings-section">
+          <label id = "break-label">Break Length</label>
           <div>
-            <button className={btnClassName} id="break-decrement" onClick={this.props.onDecreaseBreak}>-</button>
-            <span id="break-length">{this.props.breakLength}</span>
-            <button className={btnClassName} id="break-increment" onClick={this.props.onIncreaseBreak}>+</button>
+            <button  id = "break-decrement" onClick = { props.decreaseBreak}>-</button>
+            <span id="break-length">{props.breakLength}</span>
+            <button id = "break-increment" onClick = { props.increaseBreak}>+</button>
           </div>
         </div>
-        <div className="settings-section">
-          <label id="session-label">Session Length</label>
+        <div className = "settings-section">
+          <label id = "session-label">Session Length</label>
           <div>
-            <button className={btnClassName} id="session-decrement" onClick={this.props.onDecreaseSession}>-</button>
-            <span id="session-length">{this.props.sessionLength}</span>
-            <button className={btnClassName} id="session-increment" onClick={this.props.onIncreaseSession}>+</button>
+            <button id = "session-decrement" onClick = { props.decreaseSession }>-</button>
+            <span id="session-length">{props.sessionLength}</span>
+            <button id = "session-increment" onClick = { props.increaseSession }>+</button>
           </div>
         </div>
       </div>
-    )
-  }
+  )
 }
+
 
 export default Settings
